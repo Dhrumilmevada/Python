@@ -1,0 +1,728 @@
+
+
+--------------------------------------20/08/2018---------------------------------------------------
+
+-->A Python identifier is a name used to identify a variable, function, class, module or other object.
+	An identifier starts with a letter A to Z or a to z or an underscore (_) followed by zero or more letters, 
+	underscores and digits (0 to 9).
+--> Python is a case sensitive programming language.
+
+-->Class names start with an uppercase letter. All other identifiers start with a lowercase letter.
+-->Starting an identifier with a single leading underscore indicates that the identifier is private.
+-->Starting an identifier with two leading underscores indicates a strongly private identifier.
+-->If the identifier also ends with two trailing underscores, the identifier is a language-defined special name.
+
+
+-->Python provides no braces to indicate blocks of code for class and function definitions or flow control. 
+	Blocks of code are denoted by line indentation, which is rigidly enforced.
+	
+	i.e. 
+		if True:
+   			print "True"
+		else:
+   			print "False"
+
+-->Statements in Python typically end with a new line. Python does, however, allow the use of the line continuation character (\) to denote 		that the line should continue.
+	i.e. 
+		total = item_one + \
+       	 		item_two + \
+        		item_three
+
+
+-->Python accepts single ('), double (") and triple (''' or """) quotes to denote string literals, as long as the same type of quote starts and 	ends the string.
+
+	The triple quotes are used to span the string across multiple lines.
+	i.e:
+		word = 'word'
+		sentence = "This is a sentence."
+		paragraph = """This is a paragraph. It is
+					made up of multiple lines and sentences."""
+
+-->A hash sign (#) that is not inside a string literal begins a comment. All characters after the # and up to the end of 
+	the physical line are part of the comment and the Python interpreter ignores them.
+
+
+-->The following line of the program displays the prompt, the statement saying “Press the enter key to exit”, and waits for the user to take 		action
+	i.e. :
+		raw_input("\n\nPress the enter key to exit.")
+
+
+-->he semicolon ( ; ) allows multiple statements on the single line given that neither statement starts a new code block.
+	Here is a sample snip using the semicolon −
+	i.e. :
+		import sys; x = 'foo'; sys.stdout.write(x + '\n')
+
+
+-->Python has five standard data types −
+
+    - Numbers
+    - String
+    - List
+    - Tuple
+    - Dictionary
+
+-->Number:- 
+	-> Number data types store numeric values. Number objects are created when you assign a value to them.
+		i.e. var1 = 1
+			 var2 = 10
+	-> You can delete a single object or multiple objects by using the del statement. 
+		i.e. :- del var
+			    del var_a, var_b
+
+	->Supported four different numbric type:-
+		
+	    -int (signed integers)
+	    -long (long integers, they can also be represented in octal and hexadecimal)
+	    -float (floating point real values)
+	    -complex (complex numbers)
+
+-->String
+	-> Strings in Python are identified as a contiguous set of characters represented in the quotation marks. 
+		Python allows for either pairs of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) 
+		with indexes starting at 0 in the beginning of the string and working their way from -1 at the end.
+
+		The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator.
+
+		i.e.
+		print str          # Prints complete string
+		print str[0]       # Prints first character of the string
+		print str[2:5]     # Prints characters starting from 3rd to 5th
+		print str[2:]      # Prints string starting from 3rd character
+		print str * 2      # Prints string two times
+		print str + "TEST" # Prints concatenated string
+
+
+--> List
+	->Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square 			brackets ([]). To some extent, lists are similar to arrays in C. One difference between them is that all the items belonging to a 
+		list can be of different data type.
+
+		The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the 			list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition 			operator.
+
+		i.e. :
+			list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+			tinylist = [123, 'john']
+
+			print list          # Prints complete list
+			print list[0]       # Prints first element of the list
+			print list[1:3]     # Prints elements starting from 2nd till 4th 
+			print list[2:]      # Prints elements starting from 3rd element
+			print tinylist * 2  # Prints list two times
+			print list + tinylist # Prints concatenated lists
+
+-->Tuple 
+	->A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike 		lists, however, tuples are enclosed within parentheses.
+
+		The main differences between lists and tuples are: Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, 			while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists.
+		
+		i.e. :
+		
+		tuple = ( 'abcd', 786 , 2.23, 'john', 70.2  )
+		tinytuple = (123, 'john')
+
+		print tuple           # Prints complete list
+		print tuple[0]        # Prints first element of the list
+		print tuple[1:3]      # Prints elements starting from 2nd till 3rd 
+		print tuple[2:]       # Prints elements starting from 3rd element
+		print tinytuple * 2   # Prints list two times
+		print tuple + tinytuple # Prints concatenated lists
+
+-->Dictionary
+	->Python's dictionaries are kind of hash table type. They work like associative arrays or hashes found in Perl and consist of key-value 		pairs. A dictionary key can be almost any Python type, but are usually numbers or strings. Values, on the other hand, can be 			any arbitrary Python object.
+
+		Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([]).
+
+		i.e. 
+
+		dict = {}
+		dict['one'] = "This is one"
+		dict[2]     = "This is two"
+
+		tinydict = {'name': 'john','code':6734, 'dept': 'sales'}
+
+
+		print dict['one']       # Prints value for 'one' key
+		print dict[2]           # Prints value for 2 key
+		print tinydict          # Prints complete dictionary
+		print tinydict.keys()   # Prints all the keys
+		print tinydict.values() # Prints all the values
+
+
+===========================================================================28/08/2018============================================
+
+--> 														Threading
+
+-->Multiple threads within a process share the same data space with the main thread and can therefore share information or communicate with 		each other more easily than if they were separate processes.
+-->Threads sometimes called light-weight processes and they do not require much memory overhead; they are cheaper than processes.
+
+
+--> To Start new thread
+	->thread.start_new_thread ( function, args[, kwargs] )
+
+
+--> threading.activeCount() − Returns the number of thread objects that are active.
+
+    threading.currentThread() − Returns the number of thread objects in the caller's thread control.
+
+    threading.enumerate() − Returns a list of all thread objects that are currently active.
+
+--> run() − The run() method is the entry point for a thread.
+
+    start() − The start() method starts a thread by calling the run method.
+
+    join([time]) − The join() waits for threads to terminate.
+
+    isAlive() − The isAlive() method checks whether a thread is still executing.
+
+    getName() − The getName() method returns the name of a thread.
+
+    setName() − The setName() method sets the name of a thread.
+
+
+-->Create Thread using thread module :-
+
+	->Define a new subclass of the Thread class.
+
+    ->Override the __init__(self [,args]) method to add additional arguments.
+
+    ->Then, override the run(self [,args]) method to implement what the thread should do when started.
+
+	->Synchronizing Threads
+	
+	->to acquired lock
+		i.e. threading.Lock().acquired()
+	->to release lock
+		i.e. threading.Lock().release()
+
+
+-->																	Networking
+
+
+-->Sockets are the endpoints of a bidirectional communications channel. Sockets may communicate within a process, between processes on the same 	machine, or between processes on different continents.
+
+
+============================================================================7/9/2018===========================================
+
+-->The main differences between lists and tuples are: Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while 		tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists.
+
+-->Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([]).
+
+--> Data Type Conversion	
+	1 	int(x [,base])
+		Converts x to an integer. base specifies the base if x is a string.
+	2 	long(x [,base] )
+		Converts x to a long integer. base specifies the base if x is a string.
+	3 	float(x)
+		Converts x to a floating-point number.
+	4 	complex(real [,imag])
+		Creates a complex number.
+	5 	str(x)
+		Converts object x to a string representation.
+	6 	repr(x)
+		Converts object x to an expression string.
+	7 	eval(str)
+		Evaluates a string and returns an object.
+	8 	tuple(s)
+		Converts s to a tuple.
+	9 	list(s)
+		Converts s to a list.
+	10 	set(s)
+		Converts s to a set.
+	11 	dict(d)
+		Creates a dictionary. d must be a sequence of (key,value) tuples.
+	12 	frozenset(s)
+		Converts s to a frozen set.
+	13 	chr(x)
+		Converts an integer to a character.
+	14 	unichr(x)
+		Converts an integer to a Unicode character.
+	15 	ord(x)
+		Converts a single character to its integer value.
+	16 	hex(x)
+		Converts an integer to a hexadecimal string.
+	17 	oct(x)
+		Converts an integer to an octal string
+
+
+-----------------------------------------------------conditional statement----------------------------------------------------
+-->simple if statement:-
+	->if expression:
+   		statement(s)
+-->simple if statement:-
+	->if expression:
+   		statement(s)
+	else:
+   		statement(s)
+-->nested if statement:-
+	->if expression1:
+   		statement(s)
+   		if expression2:
+   	  		statement(s)
+   		elif expression3:
+   	   		statement(s)
+   		else:
+   	   		statement(s)
+   		elif expression4:
+   	   		statement(s)
+	else:
+   		statement(s)
+
+
+--------------------------------------------------Loops----------------------------------------------------------------------------
+
+-->while loop
+	->while expression:
+	   statement(s)
+-->for loop
+	->for iterating_var in sequence:
+	   statements(s)
+-->nested loops
+	->for iterating_var in sequence:
+   		for iterating_var in sequence:
+      		statements(s)
+   	statements(s)
+	->while expression:
+   		while expression:
+      		statement(s)
+   	statement(s)
+
+
+-->Four types of numbre are supported:-
+	->int 
+	->float
+	->long
+	->complex
+
+
+==========================================================================10/09/2018==========================================================
+
+-->What is self ?
+	->All methods in python including some special methods like initializer have first parameter self . This parameter refers to the object
+		which invokes the method. When you create new object the self parameter in the __init__  method is automatically set to reference the 			object you have just created.
+	->When you call a method you don’t need to pass anything to self  parameter, python automatically does that for you behind the scenes.
+
+-->Operator overloading
+	->	+ 	  __add__(self, other) 	 Addition
+	->	* 	  __mul__(self, other) 	 Multiplication
+	->	- 	  __sub__(self, other) 	 Subtraction
+	->	% 	  __mod__(self, other) 	 Remainder
+	->	/ 	  __truediv__(self, other) 	 Division
+	->	< 	  __lt__(self, other) 	 Less than
+	->	<= 	  __le__(self, other) 	 Less than or equal to
+	->	== 	  __eq__(self, other) 	 Equal to
+	->	!= 	  __ne__(self, other) 	 Not equal to
+	->	> 	  __gt__(self, other) 	Greater tha	n
+	->	>= 	  __ge__(self, other) 	 Greater than or equal to
+	->	[index] 	  __getitem__(self, index) 	 Index operator
+	->	in 	  __contains__(self, value) 	Check membership
+	->	len 	__len__(self) 	 The number of elements
+	->	str 	__str__(self) 	 The string representation
+	
+
+-->As you can see this program only accepts two numbers, what if you want to pass more than two arguments, this is where *args  comes into play.
+-->name of *args  is just a convention you can use anything that is a valid identifier. For e.g *myargs is perfectly valid.
+
+--> **kwargs allows us to pass variable number of keyword argument like this func_name(name='tim', team='school')
+
+
+===========================================================11/09/2018=========================================================================
+
+-->List Comprehension
+
+	->for item in list:
+	    if conditional:
+        	expression is equivalent to :
+
+	->new_list = [expression(i) for i in old_list if filter(i)]
+
+-->To know type of veriable use type() method and pass veriable as argument
+
+-->map()
+	->map(function, iterable, ...)
+	
+    ->function - map() passes each item of the iterable to this function.
+    ->iterable iterable which is to be mapped
+	->The map() function applies a given to function to each item of an iterable and returns a list of the results.
+
+-->List :-
+	->create list :-
+		->l = [1, 2, 3, 4]
+		->l2 = ["this is a string", 12]
+		->list1 = list() # Create an empty list
+
+	->Lists are mutable.
+
+	->Common operation 
+		->x in s		  	True if element x is in sequence s.
+		->x not in s    	if element x is not in sequence s.
+		->s1 + s2 		   	Concatenates two sequences s1 and s2
+		->s * n , n * s  	n copies of sequence s concatenated
+		->s[i]			  	ith element in sequence s.
+		->len(s)  			Length of sequence s, i.e. the number of elements in s.
+		->min(s)		  	Smallest element in sequence s.
+		->max(s)		  	Largest element in sequence s.
+		->sum(s)	    	Sum of all numbers in sequence s.
+		->for loop		  	Traverses elements from left to right in a for loop.
+
+	->Common methods
+		->append(x:object):None 	 			Adds an element x to the end of the list and returns None.
+		->count(x:object):int 					Returns the number of times element x appears in the list.
+		->extend(l:list):None 					Appends all the elements in l  to the list and returns None.
+		->index(x: object):int  				Returns the index of the first occurrence of element x in the list
+		->insert(index: int, x: object):None  	Inserts an element x at a given index. Note that the first element in the list has index 0 and 													returns None..
+		->remove(x:object):None  				Removes the first occurrence of element x from the list and returns None
+		->reverse():None  	 					Reverse the list and returns None
+		->sort(): None  						Sorts the elements in the list in ascending order and returns None.
+		->pop(i): object  						Removes the element at the given position and returns it. The parameter i is optional. If it is 												not specified, pop() removes and returns the last element in the list.
+
+
+-->Dictionary :-
+	
+	->Dictionaries are mutable
+	
+	->Creating Dictionary :-friends = {
+							'tom' : '111-222-333',
+							'jerry' : '666-33-111'
+							}
+
+	->dict_emp = {} # this will create an empty dictionary
+
+
+	->Retrieving, modifying and adding elements in the dictionary
+		->dictionary_name['key']
+		->dictionary_name['newkey'] = 'newvalue'
+		->del dictionary_name['key']
+
+	->len(friends)
+
+	->Equality Tests in dictionary
+		->d1 == d2
+
+	->Dictionary methods
+		->popitem() 	Returns randomly select item from dictionary and also remove the selected item.
+		->clear() 		Delete everything from dictionary
+		->keys() 		Return keys in dictionary as tuples
+		->values() 		Return values in dictionary as tuples
+		->get(key) 		Return value of key, if key is not found it returns None, instead on throwing KeyError exception
+		->pop(key) 		Remove the item from the dictionary, if key is not found KeyError will be thrown
+
+-->Tuple :-
+
+	->Tuples are immutable.
+
+	->Creating a tuple 
+		->t1 = () # creates an empty tuple with no data
+ 		->t2 = (11,22,33)
+		->t3 = tuple([1,2,3,4,4]) # tuple from array
+		->t4 = tuple("abc") # tuple from string
+	
+	->Tuples functions :-
+		-> t1 = (1, 12, 55, 12, 81)
+		-> min(t1)
+			1
+		-> max(t1)
+			81
+		-> sum(t1)
+			161
+		-> len(t1)
+			5
+-->String :-
+	->Creating strings :-
+		->name = "tom" # a string
+		->mychar = 'a' # a character
+		->name1 = str() # this will create empty string object
+		->name2 = str("newstring") # string object containing 'newstring'
+	
+	->Strings in python are immutable.
+
+	->id()  : Every object in python is stored somewhere in memory. We can use id()  to get that memory address.
+		-> id(str1)
+			78965411
+		-> id(str2)
+			78965411
+	
+	->ord() – function returns the ASCII code of the character.
+	->chr() – function returns character represented by a ASCII number.
+
+	->String Functions in Python
+		->len() 			returns length of the string
+		->max() 			returns character having highest ASCII value
+		->min()			 	returns character having lowest ASCII value
+		->isalnum() 		Returns True if string is alphanumeric
+		->isalpha() 		Returns True if string contains only alphabets
+		->isdigit() 		Returns True if string contains only digits	
+		->isidentifier() 	Return True is string is valid identifier
+		->islower() 		Returns True if string is in lowercase
+		->isupper() 		Returns True if string is in uppercase
+		->isspace() 		Returns True if string contains only whitespace
+	
+	->String comparison
+		->	> , < , <= , <= , == , !=
+
+	->Searching for Substrings
+		->endswith(s1: str): bool 		Returns True if strings ends with substring s1
+		->startswith(s1: str): bool 	Returns True if strings starts with substring s1
+		->count(substring): int 		Returns number of occurrences of substring the string
+		->find(s1): int 				Returns lowest index from where s1 starts in the string, if string not found returns -1
+		->rfind(s1): int 				Returns highest index from where s1 starts in the string, if string not found returns -1
+
+	->Converting Strings
+		-> capitalize(): str 		Returns a copy of this string with only the first character capitalized.
+		->lower(): str 				Return string by converting every character to lowercase
+		->upper(): str 				Return string by converting every character to uppercase
+		->title(): str 				This function return string by capitalizing first letter of every word in the string
+		->swapcase(): str 			Return a string in which the lowercase letter is converted to uppercase and uppercase to lowercase
+		->replace(old, new): str 	This function returns new string by replacing the occurrence of old string with new string
+
+--> // for interger devision
+
+
+
+===========================================================12/09/2018========================================================================
+
+-->Returning multiple values from Function
+	->We can return multiple values from function using the return statement by separating them with  a comma ( ,). Multiple values are 			returned as tuples.
+
+->range() function :-
+	->for i in range(1, 10):
+    	print(i)				#strat and end point of loop
+	->for i in range(10):
+        print(i)				#from 0 to end of loop
+	->for i in range(1, 20, 2):
+	    print(i)				#start ,end and increment for each intration
+
+-->Mathematical Function
+
+	->import math
+	
+	->round(number[, ndigits]) 	 	rounds the number, you can also specify precision in the second argument
+	->pow(a, b) 					Returns a raise to the power of b
+	->abs(x) 						Return absolute value of x
+	->max(x1, x2, …, xn) 			Returns largest value among supplied arguments
+	->min(x1, x2, …, xn) 			Returns smallest value among supplied arguments
+	->ceil(x) 						This function rounds the number up and returns its nearest integer
+	->floor(x) 						This function rounds the down up and returns its nearest integer
+	->sqrt(x) 						Returns the square root of the number
+	->sin(x) 						Returns sin of x where x is in radian
+	->cos(x) 						Returns cosine of x where x is in radian
+	->tan(x) 						Returns tangent of x where x is in radian
+
+-->generate random number
+
+	->import random
+	->for i in range(0, 10):
+	    print(random.random())
+
+	->for i in range(0, 10):
+		 print(random.randint(1, 10))
+
+-->File Handling 
+
+	->f = open(filename, mode)
+	->f.close() 
+
+	->"r"	  	 Open a file for read only
+	->"w"  		 Open a file for writing. If file already exists its data will be cleared before opening. Otherwise new file will be created
+	->"a"  		 Opens a file in append mode i.e to write a data to the end of the file
+	->"wb"  	 Open a file to write in binary mode
+	->"rb"  	 Open a file to read in binary mode
+
+	->Writing data to the file :-	
+		-> f = open('myfile.txt', 'w')    # open file for writing
+		-> f.write('this first line\n')   # write a line to the file
+		-> f.write('this second line\n')  # write one more line to the file
+		-> f.close()                      # close the file
+	
+	->Reading data from the file
+		->read([number])	  	Return specified number of characters from the file. if omitted it will read the entire contents of the file.
+		->readline()		  	Return the next line of the file.
+		->readlines() 		 	Read all the lines as a list of strings in the file
+
+		-> f = open('myfile.txt', 'r')
+		-> for line in f:
+		-> print(line)
+
+	->Binary reading and writing
+
+		-> import pickle
+		-> f = open('pick.dat', 'wb')
+		-> pickle.dump(11, f)
+		-> pickle.dump("this is a line", f)
+		-> pickle.dump([1, 2, 3, 4], f)
+		-> f.close()
+
+		-> import pickle
+		-> f = open('pick.dat', 'rb')
+		-> pickle.load(f)
+		-> f.close()
+
+-->To private member of function 
+	->object._classname__membername
+
+-->isinstance(object, class_type)
+
+-->Exception
+	
+	->Exception handling enables you handle errors gracefully and do something meaningful about it. Like display a message to user if intended 			file not found. Python handles exception using try .. except ..  block.
+
+	->	try:
+   		 	# write some code 
+   		 	# that might throw exception
+		except <ExceptionType>: 
+   		 	# Exception handler, alert the user
+
+	->	try:
+			<body>
+		except <ExceptionType1>:
+			<handler1>
+		except <ExceptionTypeN>:
+			<handlerN>
+		except:
+			<handlerExcept>
+		else:
+			<process_else>
+		finally:
+			<process_finally>
+
+	->Raising exceptions
+		->raise ExceptionClass("Your argument")
+
+	->Using Exception objects
+		->	try:
+			    number = eval(input("Enter a number: "))
+			    print("The number entered is", number)
+			except NameError as ex:
+			    print("Exception:", ex)
+
+	->Creating custom exception class
+		->You can create a custom exception class by Extending BaseException  class or subclass of BaseException.
+
+-->Module 
+
+	->from mymodule import foo
+
+	->dir(module_name)
+		->dir() is an in-built method used to find all attributes (i.e all available classes, functions, variables and constants ) of the 				object. As we have already discussed everything in python is object, we can use dir() method to find attributes of the module.
+
+-->Generators
+	->Generators are defined similar to function but there is only one difference, we use yield  keyword to return value used for each 				iteration of the for loop.
+
+
+================================================================14/09/2018==================================================================
+
+-->Regular Expression
+	
+	->import re
+
+	->re.search() Method
+		->re.search(pattern, string, flags[optional])
+
+
+		-> .		dot matches any character except newline
+		-> \w		matches any word character i.e letters, alphanumeric, digits and underscore ( _ )
+		-> \W		matches non word characters
+		-> \d		matches a single digit
+		-> \D		matches a single character that is not a digit
+		-> \s		matches any white-spaces character like \n, \t, spaces
+		-> \S		matches single non white space character
+		-> [abc]	matches single character in the set i.e either match a, b or c
+		-> [^abc]	match a single character other than a, b and c
+		-> [a-z]	match a single character in the range a to z.
+		-> [a-zA-Z]	match a single character in the range a-z or A-Z
+		-> [0-9]	match a single character in the range 0-9
+		-> ^		match start at beginning of the string
+		-> $		match start at end of the string
+		-> +		matches one or more of the preceding character (greedy match).
+		-> *		matches zero or more of the preceding character (greedy match).
+	
+	->Group capturing
+		->Group capturing allows to extract parts from the matching string. You can create groups using parentheses () . Suppose we want to 			extract username and host name from the email address in the above example. To do this we need to add ()  around username and host 				name like this.
+
+	->findall() Function
+		->As you know by now re.search()  find only first match for the pattern, what if we want to find all matches in string, this is where 				findall()  comes into the play.
+
+	->Optional flags
+		-> re.IGNORECASE	Ignores uppercase and lowercase
+		-> re.DOTALL		Allows (.) to match newline, be default (.) matches any character except newline
+		-> re.MULTILINE		This will allow ^ and $ to match start and end of each line
+	
+	->Using re.match()
+		->re.match()  is very similar to re.search()  difference is that it will start looking for matches at the beginning of the string.
+		->	import re
+			s = "python tuts"
+			match = re.match(r'py', s)
+			if match:
+		    print(match.group())
+
+		->You can accomplish the same thing by applying ^ to a pattern with re.search() .
+		->	import re
+			s = "python tuts"
+			match = re.search(r'^py', s)
+			if match:
+		    print(match.group())
+	
+
+============================================================================18/09/2018=====================================================
+
+--> lamba Function :-
+		->Python allows you to create anonymous function i.e function having no names using a facility called lambda function.
+		->lambda functions are small functions usually not more than a line. It can have any number of arguments just like a normal function.
+
+		->def multiply(x, y):
+		    return x * y
+		->is equal to 
+			r = lambda x, y: x * y
+
+======================================================================20/09/2018============================================================
+
+-->recursion
+	->When a function call itself is knows as recursion.
+	->python stop calling recursive function after 1000 calls by default.
+	->To change this behavior you need to amend the code as follows.
+		->sys.setrecursionlimit(3000)
+
+--> call forwading
+		->template.format(p1, p1, .... , k1=v1, k2=v2)
+		->{[argument_index_or_keyword]:[width][.precision][type]}
+
+		->"%d %d" % (12, 31)
+		->"%s %o %.2f %d" % ("Hello", 71, 45836.12589, 45 )
+
+
+===========================================================================12/11/2018=======================================================
+->Python is dynamically typed language.
+->pandas , numpy and scipy module in python to compute , write and read data 
+->Python2 support raw_input() and python3 support input().
+
+->String formating 
+	->"{}-{}".format(a,b)
+	->"{1}-{0}".formate(a,b) 
+-->String methods 
+	->capitalize()
+	->lower()
+	->upper()
+	->title()
+	->isUpper()
+	->isLower()
+===========================================================================16/11/2018====================================================
+-->to delete data from specific location 
+	->del list[index]
+-->to delete specific data 
+	->list.remove(data)
+-->you can also delete in slices.
+-->To add item in list use append() method.
+--> 2 in range(2,2) ===> False
+-->It is possible to write else statement for loops
+	->It will execute when loop condition not satisfied
+
+-->questions = ['name', 'quest', 'favorite color']
+	 answers = ['lancelot', 'the holy grail', 'blue']
+	 for q, a in zip(questions, answers):
+ 	   print('What is your {0}?  It is {1}.'.format(q, a)) 
+		->to use two data type in for loop
+
+--> We can make list of object or any data type.
+		
+	  
+	 
+	
+

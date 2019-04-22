@@ -1,0 +1,11 @@
+
+f = open('demo.txt','w')
+f.write('This is first line.')
+f.close()
+f = open('demo.txt','r')
+print(f.read())
+f.close()
+f = open('demo.txt','a')
+f.write('\nThis is second line.')
+f.close()
+print(open('demo.txt','r').read())
